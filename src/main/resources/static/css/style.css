@@ -1,0 +1,60 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: white;
+}
+
+#app {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #353c4e;
+  background: #f0f2f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+#header {
+  background: white;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header > div > img {
+  height: 1.75rem;
+}
+
+#header > div > span {
+  vertical-align: super;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#app-content {
+  max-width: 300px;
+  margin: auto;
+}
+
+#content > img {
+  height: 35vh;
+  max-width: 600px;
+}
+
+#content > p {
+  font-size: 2rem;
+}
+
+#footer {
+  margin-bottom: 10vh;
+  text-align: center;
+}

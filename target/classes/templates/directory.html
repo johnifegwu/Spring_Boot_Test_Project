@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Upload Certificates File</h1>
+    <form method="POST" action="/certificates/upload" enctype="multipart/form-data">
+        <label for="file">Choose a file (CSV or XLS):</label>
+        <input type="file" id="file" name="file" required>
+        <br><br>
+        <button type="submit">Upload File</button>
+    </form>
+
+    <hr/>
+
+    <div th:switch="${certificates}">
+        <p th:case="null">No certificates</p>
+        <div th:case="*">
+            <p>Certificates</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="certificate : ${certificates}">
+                        <th th:text="${certificate.subject}"></th>
+                        <th th:text="${certificate.status}"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
